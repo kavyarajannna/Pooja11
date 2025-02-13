@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Section</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .testimonial-container {
+            width: 60%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonial {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 8%;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f9f9f9;
+        }
+        .testimonial img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .testimonial-content {
+            flex: 1;
+        }
+        .testimonial-text {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .testimonial-name {
+            font-weight: bold;
+            text-align: right;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: black;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 70px;
+        }
+        .arrow-left {
+            left: 10px;
+        }
+        .arrow-right {
+            right: 10px;
+        }
+        @media (max-width: 768px) {
+            .testimonial-container {
+                width: 90%;
+            }
+            .testimonial {
+                padding: 12%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="testimonial-container">
+        <button class="arrow arrow-left" onclick="prevTestimonial()">&#10094;</button>
+        <div class="testimonial" id="testimonial">
+            <img id="testimonial-img" src="https://via.placeholder.com/100" alt="Person">
+            <div class="testimonial-content">
+                <p class="testimonial-text" id="testimonial-text">This is an amazing service! Highly recommend it.</p>
+                <p class="testimonial-name" id="testimonial-name">- John Doe</p>
+            </div>
+        </div>
+        <button class="arrow arrow-right" onclick="nextTestimonial()">&#10095;</button>
+    </div>
+    
+    <script>
+        const testimonials = [
+            { img: "1736422675161.jpg", text: "This is an amazing service! Highly recommend it.", name: "- John Doe" },
+            { img: "1736422675161.jpg", text: "Fantastic experience, will use again.", name: "- Jane Smith" },
+            { img: "1736422675161.jpg", text: "Truly outstanding service!", name: "- Michael Brown" }
+        ];
+        
+        let currentIndex = 0;
+        function updateTestimonial() {
+            document.getElementById("testimonial-img").src = testimonials[currentIndex].img;
+            document.getElementById("testimonial-text").innerText = testimonials[currentIndex].text;
+            document.getElementById("testimonial-name").innerText = testimonials[currentIndex].name;
+        }
+        
+        function nextTestimonial() {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            updateTestimonial();
+        }
+        
+        function prevTestimonial() {
+            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+            updateTestimonial();
+        }
+        
+        setInterval(nextTestimonial, 3000);
+    </script>
+</body>
+</html>

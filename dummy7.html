@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Section 7865</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        #section-7865 {
+            padding: 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            background: #f4f4f4;
+        }
+
+        #section-7865 .column {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between icon and text */
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #section-7865 .column:hover {
+            transform: scale(1.05);
+        }
+
+        #section-7865 .icon {
+            font-size: 20px;
+            color: #555;
+        }
+
+        #section-7865 .text {
+            font-size: 16px;
+            font-weight: bold;
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            #section-7865 {
+                flex-direction: column;
+                align-items: center;
+            }
+            #section-7865 .column {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="section-7865">
+        <div class="column">
+            <i class="fa fa-check-circle icon"></i>
+            <span class="text">Column 1</span>
+        </div>
+        <div class="column">
+            <i class="fa fa-user icon"></i>
+            <span class="text">Column 2</span>
+        </div>
+        <div class="column">
+            <i class="fa fa-cog icon"></i>
+            <span class="text">Column 3</span>
+        </div>
+        <div class="column">
+            <i class="fa fa-bell icon"></i>
+            <span class="text">Column 4</span>
+        </div>
+    </section>
+
+</body>
+</html>
