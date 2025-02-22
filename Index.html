@@ -57,7 +57,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 10%;
-            background: linear-gradient(to bottom, #000000e0, #333333e0);
+            /* background: linear-gradient(to bottom, #000000e0, #333333e0); */
             color: #10375C;
             position: fixed;
             /* Make it sticky */
@@ -99,42 +99,44 @@
 
 
         .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            /* Fixed width */
-            height: 50px;
-            /* Make width and height equal */
-            background-color: #F5E6C4;
-            /* Cream background */
-            overflow: hidden;
-            /* Ensures no overflow */
-            border-radius: 50%;
-            /* Makes it round */
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px; /* Default height */
+    max-width: 250px; /* Maximum width */
+    background-color: transparent !important;
+    overflow: hidden;
+}
 
-        .logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            /* Ensures full image fits without stretching */
-        }
+.logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures full visibility without distortion */
+}
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .logo {
-                width: 70px;
-                height: 70px;
-            }
-        }
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .logo {
+        height: 70px;
+        max-width: 120px;
+    }
+}
 
-        @media (max-width: 480px) {
-            .logo {
-                width: 60px;
-                height: 60px;
-            }
-        }
+@media (max-width: 768px) {
+    .logo {
+        height: 60px;
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 50px;
+        max-width: 150px;
+    }
+}
+
 
 
         /* Navigation Links */
@@ -727,6 +729,24 @@
             footer .column .address p {
                 font-size: 14px;
             }
+        }
+
+        footer .column .logo1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+            overflow: hidden;
+            /* Ensures no overflow */
+            border-radius: 50%;
+            /* Makes it round */
+        }
+
+        footer .column .logo1 img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Ensures full image fits without stretching */
         }
 
 
@@ -1597,30 +1617,26 @@
         }
 
 
-        .hero {
-            width: 100%;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: url('temple.jpg') no-repeat center center/cover;
-            margin-top: 80px;
-            /* Adjust based on header height */
-            padding-top: 80px;
-            /* Push content down */
-        }
+       /* Hero Section */
+.hero {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: url('temple.jpg') no-repeat center center/cover;
+    padding-top: 100px; /* Ensure enough space below the fixed header */
+}
 
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgb(0 0 0 / 69%);
-            /* Black mask only on the background */
-            z-index: 0;
-            /* Ensure it stays behind content */
-        }
+/* Overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 69%);
+    z-index: 0;
+} 
 
         .hero-container {
             display: flex;
@@ -1703,12 +1719,30 @@
             object-fit: cover;
             border-radius: 10px;
         }
+/* Responsive Fix */
+@media (max-width: 1024px) {
+    .hero {
+        padding-top: 90px; /* Slightly increase space for medium screens */
+    }
+}
 
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 80px; /* Adjust for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 70px; /* Adjust for mobile */
+    }
+}
         @media (max-width: 768px) {
             .hero {
                 height: auto;
                 /* Allow the section to expand */
                 min-height: 100vh;
+            
                 /* Ensure enough space */
                 display: flex;
                 flex-direction: column;
@@ -2046,9 +2080,10 @@
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg" alt="Logo">
+                <img id="logoImage" src="MNB Logo PNG white.png" alt="Logo">
             </a>
         </div>
+
 
         <nav class="nav-links">
             <ul>
@@ -2145,31 +2180,6 @@
         </div>
     </section>
 
-    <section class="chapter567">
-        <div class="chapter567-header">
-            <h2>Why Gokarna?</h2><br><br>
-            <p style="text-align: justify;"> Gokarna, often referred to as the 'Kashi of the South,' holds immense
-                spiritual significance for
-                ancestral
-                rituals such as Narayanbali, Nagabali, and PitruDosha Nivarana. Home to the sacred Mahabaleshwar Temple
-                and
-                the divine Atma-Linga of Lord Shiva, this holy town is revered as a powerful center for resolving
-                ancestral
-                karmas and liberating departed souls. Ancient scriptures like the Skanda Purana emphasize the
-                transformative
-                spiritual benefits of performing these Poojas in Gokarna, where the divine energy amplifies the efficacy
-                of
-                rituals. By conducting these sacred ceremonies here, devotees not only honor their forefathers but also
-                seek
-                blessings for peace, prosperity, and harmony in their lives, making Gokarna a uniquely blessed
-                destination
-                for ancestral worship.</p><br><br><br><br>
-        </div>
-    </section>
-
-    <hr class="custom-hr">
-
-
 
     <!-- First Row -->
     <section class="types-pooja-heading">
@@ -2178,11 +2188,12 @@
         <h2>Types of Pooja</h2>
         <br>
         <p>"To bring peace, remove ancestral doshas restore harmony in life."<br><br>
-            "Deep spiritual importance, helping to seek divine blessings, honor ancestors and overcome karmic
+            "Deep spiritual importance, helping to seek divine blessings, honor amcestors and overcome karmic
             obstacles."</p>
         <br>
         <br>
     </section>
+
     <section class="responsive-section">
 
         <div class="column">
@@ -2237,28 +2248,6 @@
             <span class="text">Esteemed priests</span>
         </div>
     </section>
-    <section class="chapter567">
-        <div class="chapter567-header">
-            <h2>Why Gokarna?</h2><br><br>
-            <p style="text-align: justify;"> Gokarna, often referred to as the 'Kashi of the South,' holds immense
-                spiritual significance for
-                ancestral
-                rituals such as Narayanbali, Nagabali, and PitruDosha Nivarana. Home to the sacred Mahabaleshwar Temple
-                and
-                the divine Atma-Linga of Lord Shiva, this holy town is revered as a powerful center for resolving
-                ancestral
-                karmas and liberating departed souls. Ancient scriptures like the Skanda Purana emphasize the
-                transformative
-                spiritual benefits of performing these Poojas in Gokarna, where the divine energy amplifies the efficacy
-                of
-                rituals. By conducting these sacred ceremonies here, devotees not only honor their forefathers but also
-                seek
-                blessings for peace, prosperity, and harmony in their lives, making Gokarna a uniquely blessed
-                destination
-                for ancestral worship.</p><br><br><br><br>
-        </div>
-    </section>
-
     <hr class="custom-hr">
     <section class="gallery565">
         <h1>Gallery</h1>
@@ -2295,14 +2284,40 @@
 
     <hr class="custom-hr">
 
+    <section class="chapter567">
+        <div class="chapter567-header">
+            <h2>Why Gokarna?</h2><br><br>
+            <p style="text-align: justify;"> Gokarna, often referred to as the 'Kashi of the South,' holds immense
+                spiritual significance for
+                ancestral
+                rituals such as Narayanbali, Nagabali, and PitruDosha Nivarana. Home to the sacred Mahabaleshwar Temple
+                and
+                the divine Atma-Linga of Lord Shiva, this holy town is revered as a powerful center for resolving
+                ancestral
+                karmas and liberating departed souls. Ancient scriptures like the Skanda Purana emphasize the
+                transformative
+                spiritual benefits of performing these Poojas in Gokarna, where the divine energy amplifies the efficacy
+                of
+                rituals. By conducting these sacred ceremonies here, devotees not only honor their forefathers but also
+                seek
+                blessings for peace, prosperity, and harmony in their lives, making Gokarna a uniquely blessed
+                destination
+                for ancestral worship.</p><br><br><br><br>
+        </div>
+    </section>
+
+    <hr class="custom-hr">
+
+
+
     <!-- Footer -->
     <!-- Footer -->
     <footer>
         <div class="footer-columns">
             <!-- First Column -->
             <div class="column">
-                <div class="logo">
-                    <img src="WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg
+                <div class="logo1">
+                    <img src="MNB Logo PNG black.png
                     " alt="Logo">
                 </div>
                 <div class="social-icons">
@@ -2363,18 +2378,18 @@
     <!-- testimonial  -->
     <script>
         const testimonials = [
-            { img: "IMG_20240826_125141.jpg", text: "A truly divine experience! The pooja was performed with great devotion, and I felt immense peace afterward. 🙏✨ ", name: "- Rajesh Iyer, Chennai" },
-            { img: "IMG_20240826_133646.jpg", text: "After the Narayana Bali pooja, we noticed a positive shift in our family’s well-being. Grateful for the guidance! 🌿🕉️ ", name: "- Ananya Sharma, Bangalore" },
-            { img: "IMG_20240826_133654.jpg", text: "The rituals were conducted with such authenticity and precision. We felt deeply connected to our ancestors.🔥🪔 ", name: "- Sandeep Kulkarni, Pune" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "A truly divine experience! The pooja was performed with great devotion, and I felt immense peace afterward. 🙏✨ ", name: "- Rajesh Iyer, Chennai" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "After the Narayana Bali pooja, we noticed a positive shift in our family’s well-being. Grateful for the guidance! 🌿🕉️ ", name: "- Ananya Sharma, Bangalore" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "The rituals were conducted with such authenticity and precision. We felt deeply connected to our ancestors.🔥🪔 ", name: "- Sandeep Kulkarni, Pune" },
 
-            { img: "IMG_20240925_074210.jpg", text: "Excellent arrangements and a spiritually uplifting experience. Highly recommend these services in Gokarna! 🌊🏞️ ", name: "- Deepika Rao, Hyderabad" },
-            { img: "IMG_20241029_111354.jpg", text: "I had been facing obstacles for years, but after the Pitrudosha pooja, everything started falling into place. 🌿🙏 ", name: "- Venkatesh Bhat, Mangalore" },
-            { img: "IMG_20241029_111359.jpg", text: "The priests performed the Nagabali pooja with great sincerity. We felt truly blessed after the ceremony! 🐍🔥 ", name: "- Priya Nair, Kochi" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "Excellent arrangements and a spiritually uplifting experience. Highly recommend these services in Gokarna! 🌊🏞️ ", name: "- Deepika Rao, Hyderabad" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "I had been facing obstacles for years, but after the Pitrudosha pooja, everything started falling into place. 🌿🙏 ", name: "- Venkatesh Bhat, Mangalore" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "The priests performed the Nagabali pooja with great sincerity. We felt truly blessed after the ceremony! 🐍🔥 ", name: "- Priya Nair, Kochi" },
 
-            { img: "IMG20250126115125.jpg", text: "A well-organized and deeply spiritual experience. Thank you for helping us complete this important ritual. 🙌🕉️ ", name: "- Ravi Verma, Delhi" },
-            { img: "IMG20250126115210.jpg", text: "The energy and atmosphere during the pooja were divine. We left with a sense of relief and fulfillment. 💫🪔 ", name: "- Meera Joshi, Mumbai" },
-            { img: "IMG20250126122245.jpg", text: "Traveling to Gokarna for the pooja was the best decision. The experience brought peace and harmony to our lives. 🌊🕊️ ", name: "- Arun Deshmukh, Nagpur" },
-            { img: "IMG20250126122255.jpg", text: "I highly recommend these pooja services for anyone seeking ancestral blessings and relief from doshas. 🕉️✨ ", name: "- Kavitha Reddy, Mysore" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "A well-organized and deeply spiritual experience. Thank you for helping us complete this important ritual. 🙌🕉️ ", name: "- Ravi Verma, Delhi" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "The energy and atmosphere during the pooja were divine. We left with a sense of relief and fulfillment. 💫🪔 ", name: "- Meera Joshi, Mumbai" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "Traveling to Gokarna for the pooja was the best decision. The experience brought peace and harmony to our lives. 🌊🕊️ ", name: "- Arun Deshmukh, Nagpur" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "I highly recommend these pooja services for anyone seeking ancestral blessings and relief from doshas. 🕉️✨ ", name: "- Kavitha Reddy, Mysore" },
 
         ];
 
@@ -2409,6 +2424,18 @@
             slidingMenu.classList.toggle('open');
             hamburgerMenu.classList.toggle('open');
         }
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector("header");
+            const logoImage = document.getElementById("logoImage");
+
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+                logoImage.src = "MNB Logo PNG black.png"; // Change to your scrolled logo
+            } else {
+                header.classList.remove("scrolled");
+                logoImage.src = "MNB Logo PNG white.png"; // Original logo
+            }
+        });
 
         // Function to toggle dropdown within the sliding menu
         function toggleDropdown(event) {
@@ -2526,7 +2553,6 @@
 
 
     </script>
-
     <script>
         (function () {
             const images = [
